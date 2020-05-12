@@ -43,13 +43,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.Mvc.Grid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.Mvc.Grid.1.0.1\lib\NET45\AspNet.Mvc.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="Caseiro.Mvc.PagedList, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caseiro.Mvc.PagedList.1.0.2\lib\net40\Caseiro.Mvc.PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="GridMvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -96,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Gridmvc.css" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\404.html" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\blank.html" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\charts.html" />
@@ -1517,6 +1533,7 @@
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.min.js" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.slim.js" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1594,10 +1611,40 @@
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.min.map" />
     <Content Include="Content\Kaynaks\startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="libman.json" />
+    <Content Include="Grid.mvc.readme" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\gridmvc.js" />
+    <Content Include="Scripts\gridmvc.lang.ru.js" />
+    <Content Include="Scripts\gridmvc.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Uploads\MakaleFoto\02fd65d6-9deb-49bd-9ad2-42fa05e06e9b.jpg" />
+    <Content Include="Uploads\MakaleFoto\054d566e-ab45-4012-b67d-4d8712b269f5.jpg" />
+    <Content Include="Uploads\MakaleFoto\0cd6e557-2779-4994-a485-3feb4d12b526.jpg" />
+    <Content Include="Uploads\MakaleFoto\18777c33-90a3-448c-8ae2-bbaaf167f94e.jpg" />
+    <Content Include="Uploads\MakaleFoto\1c8b9669-bb51-4590-926f-8cd999665e09.jpg" />
+    <Content Include="Uploads\MakaleFoto\2475db23-0766-4994-9bd3-b0cf8f5c8ce6.jpg" />
+    <Content Include="Uploads\MakaleFoto\28c4efd0-8468-42c2-aed0-2f9ee619a7a2.jpeg" />
+    <Content Include="Uploads\MakaleFoto\3c4fb89a-6e8a-4d1e-b743-3b05ace88e9d.jpg" />
+    <Content Include="Uploads\MakaleFoto\5d2d09e8-8e7b-41db-bff8-41ac5726f812.jpeg" />
+    <Content Include="Uploads\MakaleFoto\74310241-4034-48eb-ad5f-19481036e484.jpeg" />
+    <Content Include="Uploads\MakaleFoto\74440d08-80c3-473d-ad29-b9b1846d8365.jpeg" />
+    <Content Include="Uploads\MakaleFoto\77d8018a-d34d-49e6-adaf-a215119efa74.jpg" />
+    <Content Include="Uploads\MakaleFoto\7e77b5d9-1d3b-47dc-831f-43d7bf889b77.jpeg" />
+    <Content Include="Uploads\MakaleFoto\9c8bd13c-e86a-473c-877d-daee66844c3f.jpeg" />
+    <Content Include="Uploads\MakaleFoto\a660d219-e0a2-4d87-96ef-e951213d759e.jpg" />
+    <Content Include="Uploads\MakaleFoto\b4d1e20f-34f3-426b-b7b5-815825fb03ac.jpeg" />
+    <Content Include="Uploads\MakaleFoto\cb4802d7-f2dd-48dc-b3eb-c9e16afef53f.jpg" />
+    <Content Include="Uploads\MakaleFoto\ee54321c-b1c1-4cd9-af16-102857dd3219.jpeg" />
+    <Content Include="Uploads\MakaleFoto\ef5479c9-6620-42a9-869a-cc6394e75fb7.png" />
+    <Content Include="Uploads\MakaleFoto\f4175257-869e-4e22-ac92-dd4101bad7d3.jpeg" />
+    <Content Include="Uploads\MakaleFoto\f5934a33-0524-4a00-a0ad-96078a6c3878.jpeg" />
+    <Content Include="Uploads\MakaleFoto\fbb09360-c40b-4e82-8956-47ab17d8df03.png" />
+    <Content Include="Uploads\MakaleFoto\hakkimizda.png" />
+    <Content Include="Uploads\UyeFoto\19598112-6407-4075-9ce0-896b9e148feb.jpg" />
+    <Content Include="Uploads\UyeFoto\b8b28f3e-421c-48e2-83c7-eed5a8c30460.jpg" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\Iletisim.cshtml" />
     <Content Include="Views\Home\Hakkimizda.cshtml" />
@@ -1610,20 +1657,36 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AdminKategorisController.cs" />
+    <Compile Include="Controllers\AdminKategoriController.cs" />
     <Compile Include="Controllers\AdminMakaleController.cs" />
+    <Compile Include="Controllers\AdminUyeController.cs" />
+    <Compile Include="Controllers\AdminYorumController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\UyeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Etiket.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\Makale.cs" />
+    <Compile Include="Models\Mesaj.cs" />
     <Compile Include="Models\mvcblogDB.cs" />
     <Compile Include="Models\Uye.cs" />
     <Compile Include="Models\Yetki.cs" />
     <Compile Include="Models\Yorum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\HomeTexts.en.Designer.cs">
+      <DependentUpon>HomeTexts.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\HomeTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HomeTexts.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -1637,11 +1700,40 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\AdminMakale\Edit.cshtml" />
     <Content Include="Views\AdminMakale\Delete.cshtml" />
-    <Content Include="Views\AdminKategoris\Create.cshtml" />
-    <Content Include="Views\AdminKategoris\Delete.cshtml" />
-    <Content Include="Views\AdminKategoris\Details.cshtml" />
-    <Content Include="Views\AdminKategoris\Edit.cshtml" />
-    <Content Include="Views\AdminKategoris\Index.cshtml" />
+    <Content Include="Views\AdminKategori\Create.cshtml" />
+    <Content Include="Views\AdminKategori\Delete.cshtml" />
+    <Content Include="Views\AdminKategori\Details.cshtml" />
+    <Content Include="Views\AdminKategori\Edit.cshtml" />
+    <Content Include="Views\AdminKategori\Index.cshtml" />
+    <Content Include="Views\Uye\Create.cshtml" />
+    <Content Include="Views\Uye\Login.cshtml" />
+    <Content Include="Views\Uye\Edit.cshtml" />
+    <Content Include="Views\Uye\Index.cshtml" />
+    <Content Include="Views\Uye\UyeProfil.cshtml" />
+    <Content Include="Views\Home\MakaleDetay.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\Home\KategoriMakale.cshtml" />
+    <Content Include="Views\Shared\BlogAraPartial.cshtml" />
+    <Content Include="Views\Shared\BlogAra.cshtml" />
+    <Content Include="Views\Home\SonYorumlar.cshtml" />
+    <Content Include="Views\Home\PopulerMakaleler.cshtml" />
+    <Content Include="Views\AdminMakale\Details.cshtml" />
+    <Content Include="Views\AdminUye\Index.cshtml" />
+    <Content Include="Views\AdminUye\Details.cshtml" />
+    <Content Include="Views\AdminUye\Create.cshtml" />
+    <Content Include="Views\AdminUye\Edit.cshtml" />
+    <Content Include="Views\AdminUye\Delete.cshtml" />
+    <Content Include="Views\AdminYorum\Index.cshtml" />
+    <Content Include="Views\AdminYorum\Details.cshtml" />
+    <Content Include="Views\AdminYorum\Create.cshtml" />
+    <Content Include="Views\AdminYorum\Edit.cshtml" />
+    <Content Include="Views\AdminYorum\Delete.cshtml" />
+    <Content Include="Views\Language\Index.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Contact\MesajGoster.cshtml" />
+    <Content Include="Views\Contact\Delete.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1651,6 +1743,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\HomeTexts.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HomeTexts.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\HomeTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HomeTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

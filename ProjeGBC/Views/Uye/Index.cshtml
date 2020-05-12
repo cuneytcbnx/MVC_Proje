@@ -1,16 +1,17 @@
-﻿@model MvcBlog.Models.Uye
+﻿@model ProjeGBC.Models.Uye
+
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Üye</h2>
 
-<div>
-    <h4>Profil</h4>
-    <hr />
-    <dl class="dl-horizontal col-md-8">
+<dl class="dl-horizontal col-md-8">
+    <div>
+        <h4>Üye Profil</h4>
+        <hr />
+
         <dt>
             @Html.DisplayNameFor(model => model.Yetki.Yetki1)
         </dt>
@@ -61,6 +62,8 @@
         <p>
             @Html.ActionLink("Güncelle", "Edit", new { id = Model.UyeId })
         </p>
-    </dl>
-</div>
+    </div>
+
+</dl>
+
 

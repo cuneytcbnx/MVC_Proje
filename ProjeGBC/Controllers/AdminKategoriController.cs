@@ -10,17 +10,17 @@ using ProjeGBC.Models;
 
 namespace ProjeGBC.Controllers
 {
-    public class AdminKategorisController : Controller
+    public class AdminKategoriController : Controller
     {
         private mvcblogDB db = new mvcblogDB();
 
-        // GET: AdminKategoris
+        // GET: AdminKategori
         public ActionResult Index()
         {
             return View(db.Kategoris.ToList());
         }
 
-        // GET: AdminKategoris/Details/5
+        // GET: AdminKategori/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace ProjeGBC.Controllers
             return View(kategori);
         }
 
-        // GET: AdminKategoris/Create
+        // GET: AdminKategori/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminKategoris/Create
+        // POST: AdminKategori/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace ProjeGBC.Controllers
             return View(kategori);
         }
 
-        // GET: AdminKategoris/Edit/5
+        // GET: AdminKategori/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace ProjeGBC.Controllers
             return View(kategori);
         }
 
-        // POST: AdminKategoris/Edit/5
+        // POST: AdminKategori/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace ProjeGBC.Controllers
             return View(kategori);
         }
 
-        // GET: AdminKategoris/Delete/5
+        // GET: AdminKategori/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace ProjeGBC.Controllers
             return View(kategori);
         }
 
-        // POST: AdminKategoris/Delete/5
+        // POST: AdminKategori/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

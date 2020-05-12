@@ -23,11 +23,11 @@
     </dl>
 
     @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Sil" class="btn btn-default" /> |
-            @Html.ActionLink("Geri Dön", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-default" /> |
+        @Html.ActionLink("Geri Dön", "Index")
+    </div>
     }
 </div>

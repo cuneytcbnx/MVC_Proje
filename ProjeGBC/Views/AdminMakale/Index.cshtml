@@ -1,11 +1,13 @@
-﻿@model IEnumerable<ProjeGBC.Models.Makale>
+﻿@model IPagedList<ProjeGBC.Models.Makale>
+@using PagedList
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Makaleler</h2>
 
 <p>
     @Html.ActionLink("Yeni Makale", "Create")
@@ -13,58 +15,55 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+            @Html.Label("Kategori Adı")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Uye.KullaniciAdi)
+            @Html.Label("Başlık")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Baslik)
+            @Html.Label("Foto")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Icerik)
+            @Html.Label("Tarih")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Foto)
+            @Html.Label("Okunma")
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tarih)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Okunma)
-        </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Uye.KullaniciAdi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Baslik)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Icerik)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tarih)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Okunma)
-        </td>
-        <td>
-            @Html.ActionLink("Düzenle", "Edit", new { id=item.MakaleId }) |
-            @Html.ActionLink("Detay", "Details", new { id=item.MakaleId }) |
-            @Html.ActionLink("Sil", "Delete", new { id=item.MakaleId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Baslik)
+            </td>
+
+            <td>
+                <img width="75" src="@item.Foto" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Okunma)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.MakaleId }) |
+                @Html.ActionLink("Detay", "Details", new { id = item.MakaleId }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.MakaleId })
+            </td>
+        </tr>
+    }
 
 </table>
+<div class="row">
+    <div class="col-md-8 text-center">
+        <div class="pagedList pagination-lg">
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.Classic)
+        </div>
+    </div>
+</div>

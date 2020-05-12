@@ -1,4 +1,4 @@
-﻿@model MvcBlog.Models.Uye
+﻿@model ProjeGBC.Models.Uye
 
 @{
     ViewBag.Title = "UyeProfil";
@@ -8,10 +8,10 @@
 
 
 <div>
-   
+
     <hr />
     <dl class="dl-horizontal col-md-8">
-        
+
         <dt>
             @Html.DisplayNameFor(model => model.Yetki.Yetki1)
         </dt>
@@ -39,22 +39,36 @@
             @Html.DisplayFor(model => model.AdSoyad)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-
-        <dd>
-            <img src="@Model.Foto" class="img-circle" alt="@Model.AdSoyad" width="75" />
-        </dd>
 
     </dl>
 
-    <h4>Son Eklediği Makaleler</h4>
-    <div class="col-md-8">
-        @foreach (var item in Model.Makales.OrderByDescending(m => m.MakaleId).Take(5))
-        {
-            <li><a href="/Home/MakaleDetay/@item.MakaleId">@item.Baslik</a></li>
-        }
+    <div class="col-md-8 mt-5">
+        <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="@Model.Foto" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@Model.KullaniciAdi</h5>
+                <p class="card-text">
+                    <h4>Son Eklediği Makaleler</h4>
+                    @foreach (var item in Model.Makales.OrderByDescending(m => m.MakaleId).Take(5))
+                    {
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="/Home/MakaleDetay/@item.MakaleId">@item.Baslik</a></li>
+                        </ul>
+                    }
+                </p>
+
+            </div>
+        </div>
     </div>
+
+    @*<div class="col-md-8 mt-5">
+            <h4>Son Eklediği Makaleler</h4>
+            @foreach (var item in Model.Makales.OrderByDescending(m => m.MakaleId).Take(5))
+            {
+                <ul class="list-unstyled mb-0">
+                    <li><a href="/Home/MakaleDetay/@item.MakaleId">@item.Baslik</a></li>
+                </ul>
+            }
+        </div>*@
 
 </div>

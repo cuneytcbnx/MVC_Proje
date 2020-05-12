@@ -5,8 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-using MvcBlog.Models;
-namespace MvcBlog.Controllers
+using ProjeGBC.Models;
+namespace ProjeGBC.Controllers
 {
     public class UyeController : Controller
     {

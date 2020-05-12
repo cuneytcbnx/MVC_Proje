@@ -1,21 +1,49 @@
-﻿
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ProjeGBC.Models.Makale>
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="col-md-8">
-    <h2>Index</h2>
+<div>
+    @foreach (var item in Model)
+    {    
+        <article class="col-sm-12">
+            <div class="card mb-4">
+                <h2 class="d-block p-2 mb-0 bg-dark text-white">@item.Baslik</h2>
+                <img class="card-img-top" src="@item.Foto" alt="@item.Baslik">
+                <div class="card-body">
+                    <h2 class="card-title">@item.Kategori.KategoriAdi</h2>
+                    <p class="card-text">
+                        @if (item.Icerik.Length > 250)
+                        {
+                        <p>@Html.Raw(item.Icerik.Substring(0, 250)) ... </p>
+                    }
+                    else
+                    {
+                        <p>@Html.Raw(item.Icerik) ... </p>
+                    }
+                        </p>
+                        <a href="/Home/MakaleDetay/@item.MakaleId" class="btn btn-primary">Devamını Oku &rarr;</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        @String.Format("{0: MMMM yyyy}", item.Tarih) <span></span>@item.Etikets.Count();
+                        Yazan :
+                        <a href="/Uye/UyeProfil/@item.Uye.UyeId">@item.Uye.KullaniciAdi</a>
+                    </div>
+                </div>
+            </article>
+        }
 
-    <div class="card mb-4">
-        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-        <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-        </div>
-        <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
+    <div class="row">
+        <div class="col-md-8 text-center">
+            <div class="pagedList pagination-lg">
+                @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.Classic)
+            </div>
         </div>
     </div>
+
+
 </div>
+
